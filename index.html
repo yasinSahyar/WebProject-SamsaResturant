@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main.js">
 </head>
 <body>
     <header>
@@ -13,19 +14,22 @@
                 <li class="logo"><a href="index.html"></a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
-                <li><a href="locations.html">Locations</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="mobile"><a href="locations.html">Locations</a></li>
+                <li class="mobile"><a href="contact.html">Contact</a></li>
+                <li class="desktop"><a href="locations.html">Locations</a></li>
+                <li class="desktop"><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         
     </header>
     <section class="features">
         <figure>
+            
             <img src="images/f1.png" alt="lezetlik koy gushi">
             <figcaption>lezetlik koy gushi</figcaption>
         </figure>
         <figure>
-            <img src="images/f2.png" alt="Dingding somen">
+            <img src="images/f4.png" alt="Dingding somen">
             <figcaption>Dingding somen</figcaption>
         </figure>
         <figure>
@@ -34,9 +38,137 @@
         </figure>
         
     </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <h2>Our Menu</h2>
+        <div class="menu-filters">
+            <button class="filter-btn" onclick="filterMenu('all')">All</button>
+            <button class="filter-btn" onclick="filterMenu('burger')">Burger</button>
+            <button class="filter-btn" onclick="filterMenu('pizza')">Pizza</button>
+            <button class="filter-btn" onclick="filterMenu('pasta')">Pasta</button>
+            <button class="filter-btn" onclick="filterMenu('drinks')">Drinks</button>
+        </div>
+        <div class="menu-items">
+            <div class="menu-card pizza">
+                <img src="images/dapanji.jpg" alt="Delicious Pizza">
+                <div class="card-content">
+                    <h3>Delicious Pizza</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <span class="price">$20</span>
+                    <button class="add-to-cart">🛒</button>
+                </div>
+            </div>
+            <div class="menu-card burger">
+                <img src="images/guirulahman.jpg" alt="Delicious Burger">
+                <div class="card-content">
+                    <h3>Delicious Burger</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <span class="price">$15</span>
+                    <button class="add-to-cart">🛒</button>
+                </div>
+            </div>
+            <div class="menu-card pasta">
+                <img src="images/achikSalat.png" alt="Delicious Pasta">
+                <div class="card-content">
+                    <h3>Delicious Pasta</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <span class="price">$18</span>
+                    <button class="add-to-cart">🛒</button>
+                </div>
+            </div>
+            <div class="menu-card drinks">
+                <img src="images/goshPolo.jpg" alt="Delicious Pasta">
+                <div class="card-content">
+                    <h3>Delicious Pasta</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <span class="price">$18</span>
+                    <button class="add-to-cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="menu-card pizza">
+                    <img src="images/jangduSalat.png" alt="Delicious Pizza">
+                    <div class="card-content">
+                        <h3>Delicious Pizza</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <span class="price">$20</span>
+                        <button class="add-to-cart">🛒</button>
+                    </div>
+                </div>
+                <div class="menu-card burger">
+                    <img src="images/ganbiansoman.jpg" alt="Delicious Burger">
+                    <div class="card-content">
+                        <h3>Delicious Burger</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <span class="price">$15</span>
+                        <button class="add-to-cart">🛒</button>
+                    </div>
+                </div>
+                <div class="menu-card pasta">
+                    <img src="images/qobanSalat.jpg" alt="Delicious Pasta">
+                    <div class="card-content">
+                        <h3>Delicious Pasta</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <span class="price">$18</span>
+                        <button class="add-to-cart">🛒</button>
+                    </div>
+                </div>
+                <div class="menu-card drinks">
+                    <img src="images/tudusir.png" alt="Delicious Pasta">
+                    <div class="card-content">
+                        <h3>Delicious Pasta</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <span class="price">$18</span>
+                        <button class="add-to-cart">🛒</button>
+                    </div>
+                </div>
+            <!-- Add more menu-card divs for other products -->
+        </div>
+    </section>
     
+
+    <script src="main.js"></script>
+
+    <!--Footer -->
+
     <footer>
-        © 2024 All Rights Reserved By-Yasin 
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>📍 Location</p>
+                <p>📞 Call: +358 449857191</p>
+                <p>📧 jasiin358@gmail.com</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Feane</h3>
+                <p>Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Opening Hours</h3>
+                <p>Everyday</p>
+                <p>10.00 Am - 10.00 Pm</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 All Rights Reserved By-Yasin Free XXX</p>
+            <p>© Distributed By Runner</p>
+        </div>
+
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     </footer>
 </body>
 </html>

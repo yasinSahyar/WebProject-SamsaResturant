@@ -23,6 +23,9 @@ header a {
     margin-top: 40px;
     
 }
+header .mobile {
+    display: none;
+}
 
 header .logo a {
     background-image: url("images/logon.png");
@@ -48,13 +51,36 @@ nav li {
     margin-right: 20px;
 }
 
+/* Resposive rules*/
+@media screen and (max-width: 715px) {
+    header {
+        height: 250px;
+        background-position: 0 -30px;
+    }
+    header .mobile {
+        display: inline-block;
+    }
+    header .desktop {
+        display: none;
+    }
+}
+@media screen and (max-width: 500px) {
+    header {
+        height: 200px;
+        background-position: 0 -10px;
+    }
+
+}
+  
+
 /*features*/
 .features {
     background:rgb(243, 242, 240);
     color:rgb(7, 19, 16);
     padding: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
+    flex-wrap: wrap;      /* koznek kichikletkende resimlerni astiha tizish  */
 
 }
 
@@ -72,11 +98,246 @@ nav li {
     box-shadow: black 0 0 10px;
 }
 
-/*footer*/
-footer {
-    background:black;
-    color: gray;
-    font-size: 15px;
-    padding: 10px 20px;
+
+
+/* Resposive rules*/ /* koznek kichikletkende resimlerni astiha tizish  */
+/* @media screen and (max-width: 715px) {
+    .features {
+        display: block;
+    }
+} */
+
+
+/*  Menu style*********** -------   */
+
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+
+.features figure {
     text-align: center;
 }
+
+.features img {
+    max-width: 150px;
+    border-radius: 8px;
+}
+
+/* Menu Section Styling */
+.menu-section {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.menu-section h2 {
+    font-size: 2.5rem;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.menu-filters {
+    margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background-color: #555;
+}
+
+/* Menu Items Grid */
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Menu Card Styling */
+.menu-card {
+    width: 250px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.menu-card:hover {
+    transform: scale(1.05);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    float: right;
+}
+
+.add-to-cart:hover {
+    background-color: #ff9800;
+}
+
+
+
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #2a2e35;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 0;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: "Cursive", sans-serif;
+}
+
+.footer-column p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffc107;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 800px) {
+    .features {
+        background:pink;
+    }
+}
+  
+@media screen and (max-width: 400px) {
+    .features {
+        background:red;
+    }
+}
+  
+
