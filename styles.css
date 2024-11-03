@@ -288,22 +288,34 @@ footer {
     line-height: 1.6;
 }
 
+/* Styling for social media icons */
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     margin-top: 10px;
 }
 
-.social-icons a {
-    color: #fff;
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff; /* White background for icon */
+    color: #2a2e35; /* Dark color for icon itself */
     font-size: 1.2rem;
-    transition: color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
 }
 
-.social-icons a:hover {
-    color: #ffc107;
+.social-icon:hover {
+    background-color: #ffc107; /* Yellow background on hover */
+    color: #2a2e35; /* Dark color for icon on hover */
 }
+
+
 
 .footer-bottom {
     margin-top: 30px;
