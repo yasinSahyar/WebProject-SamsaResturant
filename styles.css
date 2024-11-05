@@ -28,17 +28,15 @@ header .mobile {
 }
 
 header .logo a {
-    background-image: url("images/logon.png");
-    background-size: 180px;
-    background-repeat: no-repeat;
-    display: inline-block;
-    border-radius: 15px;
-    height: 160px;
-    position: relative;
-    top: -40px;
-    text-indent:30px;
-    width: 170px;
-    text-align:left
+    background-image: url(images/chef.jpg);
+    background-size: 36px;
+    /* background-repeat: no-repeat; */
+    border-radius: 30px;
+    /* height: 100px; */
+    /* position: relative; */
+    /* text-indent: 30px; */
+
+    
 }
 
 nav ul {
