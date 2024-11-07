@@ -5,41 +5,55 @@ body {
     margin:0;
     padding: 0;
 }
-/*header*/
 header {
     padding: 20px;
-    height: 400px;
+    height: 600px;
     background: rgba(55, 0, 3, 0.675);
     background-image:url("images/hero.jpg") ;
     background-size: 80%;
     background-position:center;
-   
 }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
 
 header a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     
 }
 header .mobile {
     display: none;
 }
 
-header .logo a {
-    background-image: url("images/logon.png");
-    background-size: 180px;
+.logo{
+     
+    background-image: url(images/chef.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
-    display: inline-block;
-    border-radius: 15px;
-    height: 160px;
-    position: relative;
-    top: -40px;
-    text-indent:30px;
-    width: 170px;
-    text-align:left
+    /* display: flex; */
+    border-radius: 100px;
+    /* border: 100px; */
+    /* justify-content: center; */
+    height: 61px;
+    /* position: relative; */
+    /* top: -40px; */
+    /* text-indent: 30px; */
+    width: 63px;
+    margin: 0;
 }
+
+
 
 nav ul {
     margin: 0;
@@ -63,17 +77,28 @@ nav li {
     header .desktop {
         display: none;
     }
-}
-@media screen and (max-width: 500px) {
-    header {
-        height: 200px;
-        background-position: 0 -10px;
+    nav li {
+        margin-right: 10px;
+    }
+    .login {
+        margin-left: auto;
     }
 
 }
-  
+@media screen and (max-width: 500px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .login {
+        margin-left: 0;
+    }
+}
 
-/*features*/
 .features {
     background:rgb(243, 242, 240);
     color:rgb(7, 19, 16);
@@ -99,19 +124,103 @@ nav li {
 }
 
 
+.container {
+    max-width:400px;
+    margin-top: 30px;
+}
 
-/* Resposive rules*/ /* koznek kichikletkende resimlerni astiha tizish  */
-/* @media screen and (max-width: 715px) {
-    .features {
-        display: block;
-    }
-} */
+.mb-5, .my-5 {
+    margin-bottom: 3rem !important;
+}
+
+.mt-5, .my-5 {
+    margin-top: 3rem !important;
+}
+.my-5{
+    margin-bottom: 30px;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: #e9ecef;
+    
+    
+}
+div.card{
+    border-radius: 30px;
+    width: auto;
+    height: 800px;
+    text-indent: 5px;
+    
+}
 
 
-/*  Menu style*********** -------   */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+label, input,textarea, button{
+    font-weight: bold;
+    margin-left: 50px;
+    color: #333;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+.form-control {
+    border-radius: 30px;
+}
+#adults, #children, #date, #time {
+    border-radius: 15px;
+    max-width: 400px;
+    margin-left: 50px;
+    
+}
+#comments{
+    border-radius: 15px;
+    
+}
+
+div.form-group{
+    margin-top: 50px;
+
+}
+textarea.form-control {
+    height: auto;
+    padding-bottom: 172px;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    width: 80px;
+    border-radius: 15px;
+    justify-self: center;
+    background-color: #e74e4e; /* Original background color */
+    border: none;
+    color: #2a2e35; /* Original text color */
+}
+
+/* Add hover effect for the button */
+.btn:not(:disabled):not(.disabled):hover {
+    background-color: #c0392b; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+}
+
+.btn-primary {
+    background-color: #abc2d9;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #dada98;
+}
 
 
-/* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -121,23 +230,27 @@ body {
 
 header {
     background-color: #333;
-    padding: 1rem;
+    padding: 3rem;
 }
-
 header nav ul {
-    list-style: none;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 30px;
+    margin: 0;
+    margin-top: -60px;
 }
 
+nav li {
+    margin-left: 100px;
+    margin: 0 10px;
+}
 header nav ul li a {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
-
-/* Features Section */
 .features {
     display: flex;
     justify-content: center;
@@ -247,12 +360,6 @@ header nav ul li a {
     background-color: #ff9800;
 }
 
-
-
-
-
-
-/* Footer Styles */
 footer {
     background-color: #2a2e35;
     color: #fff;
