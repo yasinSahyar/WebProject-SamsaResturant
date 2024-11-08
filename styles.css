@@ -194,19 +194,21 @@ textarea.form-control {
 }
 .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
-    width: 80px;
+    width: 135px;
     border-radius: 15px;
     justify-self: center;
     background-color: #b5ec9d82; /* Original background color */
     border: none;
     color: #2a2e35; /* Original text color */
+    margin: 15px;
 }
 
 /* Add hover effect for the button */
 .btn:not(:disabled):not(.disabled):hover {
-    background-color: #b5ec9d82; /* Change background color on hover */
-    color: #fff; /* Change text color on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+    background-color: #b5ec9d82; 
+    color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    
 }
 
 .btn-primary {
@@ -458,5 +460,55 @@ footer {
         background:red;
     }
 }
-  
+.modal-dialog.modal-lg {
+    max-width: 800px;
+    border: none;
+}
+.modal .modal-content {
+    position: relative;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #f8f2fc;
+    background-clip: padding-box;
+    border-radius: 30px;
+    outline: 0;
+    text-indent: -18px;
+    border: none;
+}
 
+.modal .modal-header{
+    margin: auto;
+    border: none;
+}
+.modal .modal-body{
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 3rem;
+    border: none;
+}
+div.form-group{
+    padding: auto;
+    border: none;
+    padding-left: 10px;
+}
+
+.password {
+border-radius: 15px;
+background-color: #b5ec9d82;
+border: none;
+font-style: normal;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+justify-content: center;
+display: block;
+
+}
+
+.password:hover{
+    background-color: #b5ec9d82; 
+    color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
