@@ -29,7 +29,7 @@ CREATE TABLE `daily_menu` (
   PRIMARY KEY (`daily_menu_id`),
   KEY `item_id` (`item_id`),
   CONSTRAINT `daily_menu_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `menu_items` (`item_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,8 @@ CREATE TABLE `daily_menu` (
 
 LOCK TABLES `daily_menu` WRITE;
 /*!40000 ALTER TABLE `daily_menu` DISABLE KEYS */;
+INSERT INTO `daily_menu` VALUES
+(4,5,'2024-11-10');
 /*!40000 ALTER TABLE `daily_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +114,7 @@ CREATE TABLE `menu_items` (
   PRIMARY KEY (`item_id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `menu_items_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `menu_categories` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,9 +124,8 @@ CREATE TABLE `menu_items` (
 LOCK TABLES `menu_items` WRITE;
 /*!40000 ALTER TABLE `menu_items` DISABLE KEYS */;
 INSERT INTO `menu_items` VALUES
-(2,1,'Chalaw','A delicious traditional food',19.99,1),
-(3,1,'Chalaw','A delicious traditional food',19.99,1),
-(7,2,'samsa','A delicious traditional food',19.99,1);
+(3,1,'Chalaw','A delicious traditional food',19.99,0),
+(5,NULL,'Pacha','Rice, lamp meat, rusines and carrot',27.99,1);
 /*!40000 ALTER TABLE `menu_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -265,7 +266,7 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -275,7 +276,8 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES
-(1,'Husu','1990-01-01',45841222,'Espoo','husu@gmaik.com','nopass','2024-11-08 21:50:09');
+(1,'Husu','1990-01-01',123456789,'Espoo','husu@gmaik.com','nopass','2024-11-08 21:50:09'),
+(2,'Juha iskinen','1990-05-15',1234567890,'heslinginkatu','juka@example.com','passh','2024-11-10 12:18:28');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -288,4 +290,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-09  0:15:37
+-- Dump completed on 2024-11-10 15:05:03
