@@ -5,15 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Page</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="main.js">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
 </head>
 <body>
     <header>
@@ -23,18 +17,117 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="Reservation.html">Reservation</a></li>
-                <li class="login">
-                    <a href="login.html">Login
+                <li class="nav-item login">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#loginModal">Login
                         <span class="material-symbols-outlined">person</span>
                     </a>
                 </li>
             </ul>
         </nav>
-        <div>
-            <img src="images/title.png" alt="title" class="image-wrapper">
-
-        </div>
     </header>
+    
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email address</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link password" data-toggle="modal" data-target="#forgotPasswordModal" data-dismiss="modal">Forgot Password?</button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#registerModal" data-dismiss="modal">Register</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="registerName">Full Name:</label>
+                                <input type="text" class="form-control" id="registerName" name="name" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="registerDOB">Date of Birth:</label>
+                                <input type="date" class="form-control" id="registerDOB" name="dob">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="registerContact">Contact Number:</label>
+                                <input type="tel" class="form-control" id="registerContact" name="contact" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="registerAddress">Address:</label>
+                                <input type="text" class="form-control" id="registerAddress" name="address" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="registerEmail">Email Address:</label>
+                                <input type="email" class="form-control" id="registerEmail" name="email" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="registerPassword">Password:</label>
+                                <input type="password" class="form-control" id="registerPassword" name="password" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="forgotPasswordForm">
+                        <div class="form-group">
+                            <label for="forgotEmail">Email Address</label>
+                            <input type="email" class="form-control" id="forgotEmail" placeholder="Enter your registered email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
     
     
     <section>
@@ -120,6 +213,8 @@
        
 
     </footer>
+    <script src="main.js"></script>
+
 </body>
 </html>
 <!-- https://www.youtube.com/watch?v=J35jug1uHzE&list=PLoYCgNOIyGAB_8_iq1cL8MVeun7cB6eNc&index=3 -->

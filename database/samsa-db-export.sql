@@ -173,8 +173,8 @@ CREATE TABLE `orders` (
   `status` enum('Pending','Completed','Cancelled') NOT NULL,
   `total_amount` decimal(10,2) NOT NULL,
   PRIMARY KEY (`order_id`),
-  KEY `fk_orders_users` (`user_id`),
-  CONSTRAINT `fk_orders_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
+  KEY `fk_orders_user_id` (`user_id`),
+  CONSTRAINT `fk_orders_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -290,4 +290,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-10 15:05:03
+-- Dump completed on 2024-11-12 23:58:32

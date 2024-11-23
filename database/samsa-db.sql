@@ -12,20 +12,21 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
 CREATE TABLE orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     status ENUM('Pending', 'Completed', 'Cancelled') NOT NULL,
     total_amount DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES customers(user_id)
+    FOREIGN KEY (user_id) REFERENCES **users**(user_id)  -- Changed from `customers` to `users`
 );
+
 CREATE TABLE menu_categories (
     category_id INT AUTO_INCREMENT PRIMARY KEY,
     category_name VARCHAR(50),
     description TEXT
 );
+
 CREATE TABLE menu_items (
     item_id INT AUTO_INCREMENT PRIMARY KEY,
     category_id INT,
@@ -35,6 +36,7 @@ CREATE TABLE menu_items (
     is_available BOOLEAN DEFAULT TRUE,
     FOREIGN KEY (category_id) REFERENCES menu_categories(category_id)
 );
+
 CREATE TABLE order_items (
     order_item_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
@@ -44,12 +46,14 @@ CREATE TABLE order_items (
     FOREIGN KEY (order_id) REFERENCES orders(order_id),
     FOREIGN KEY (item_id) REFERENCES menu_items(item_id)
 );
+
 CREATE TABLE daily_menu (
     daily_menu_id INT AUTO_INCREMENT PRIMARY KEY,
     item_id INT NOT NULL,
     menu_date DATE NOT NULL,
     FOREIGN KEY (item_id) REFERENCES menu_items(item_id)
 );
+
 CREATE TABLE reservations (
     reservation_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -61,6 +65,7 @@ CREATE TABLE reservations (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
 CREATE TABLE password_reset_requests (
     reset_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -77,10 +82,10 @@ CREATE TABLE login_attempts (
     successful BOOLEAN,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
+-- Sample Data Insertion
 INSERT INTO users (full_name, date_of_birth, contact_number, address, email, password) 
 VALUES ('Husu', '1990-01-01', '045841222', 'Espoo', 'husu@gmaik.com', 'nopass');
-
-INSERT INTO customers (user_id, phone) VALUES (1, '045841222');
 
 INSERT INTO menu_categories (category_name, description) 
 VALUES ('Afghan Cuisine', 'Traditional Afghan dishes');
@@ -103,7 +108,7 @@ VALUES ('Traditional Dishes', 'A category for traditional foods');
 INSERT INTO menu_items (category_id, name, description, price, is_available) 
 VALUES (2, 'samsa', 'A delicious traditional food', 19.99, TRUE);
 
-
+-- Querying Orders for a Specific User
 SELECT Orders.order_id, Orders.order_date, Orders.status, Orders.total_amount,
        Menu_Items.name AS item_name, Order_Items.quantity, Order_Items.price
 FROM orders
@@ -111,6 +116,7 @@ JOIN order_items ON orders.order_id = order_items.order_id
 JOIN menu_items ON order_items.item_id = menu_items.item_id
 WHERE orders.user_id = 1;
 
+-- Querying Daily Menu for a Specific Date
 SELECT menu_items.name, menu_items.description, menu_items.price
 FROM daily_menu
 JOIN menu_items ON daily_menu.item_id = menu_items.item_id
