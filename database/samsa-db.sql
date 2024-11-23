@@ -1,5 +1,5 @@
-CREATE DATABASE samsa;
-USE samsa;
+CREATE DATABASE samsa_restaurant;
+USE sa,samsa_restaurant;
 
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
