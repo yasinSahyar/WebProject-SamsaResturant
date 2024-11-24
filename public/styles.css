@@ -9,7 +9,7 @@ header {
     padding: 20px;
     height: 600px;
     background: rgba(55, 0, 3, 0.675);
-    background-image:url("images/hero.jpg") ;
+    background-image:url("./images/hero.jpg") ;
     background-size:cover;
 
     background-repeat: no-repeat;
@@ -117,7 +117,7 @@ header .mobile {
 
 .logo{
      
-    background-image: url(images/chef.jpg);
+    background-image: url(./images/chef.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     /* display: flex; */
@@ -231,7 +231,7 @@ nav li {
 div.card{
     border-radius: 30px;
     width: auto;
-    height: 800px;
+    height: 950px;
     text-indent: 5px;
     background-color: #f8f2fc;
 }
@@ -254,7 +254,7 @@ label, input,textarea, button{
 .form-control {
     border-radius: 30px;
 }
-#adults, #children, #date, #time {
+#adults, #children, #date, #time, #name, #email {
     border-radius: 15px;
     max-width: 400px;
     margin-left: 50px;
@@ -545,52 +545,139 @@ footer {
 .modal-dialog.modal-lg {
     max-width: 800px;
     border: none;
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+
 .modal .modal-content {
     position: relative;
     display: flex;
-    -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
-    background-color: #f8f2fc;
-    background-clip: padding-box;
-    border-radius: 30px;
-    outline: 0;
-    text-indent: -18px;
+    background-color: #f8f2fc; /* Light background color */
+    border-radius: 30px; /* Rounded corners */
+    outline: none;
+    text-indent: 5px;
     border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font */
 }
 
-.modal .modal-header{
+.modal .modal-header {
     margin: auto;
     border: none;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem; /* Similar to card title */
+    text-align: center;
 }
-.modal .modal-body{
+
+.modal .modal-body {
     position: relative;
-    -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 3rem;
-    border: none;
+    background-color: #f8f2fc;
+    border-radius: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333; /* Neutral text color */
 }
-div.form-group{
-    padding: auto;
-    border: none;
+
+.modal .form-group {
+    margin-top: 50px;
     padding-left: 10px;
+    border: none;
 }
 
-.password {
-border-radius: 15px;
-background-color: #b5ec9d82;
-border: none;
-font-style: normal;
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-justify-content: center;
-display: block;
-
+.modal .form-control {
+    border-radius: 30px; /* Consistent rounded inputs */
+    max-width: 400px;
+    margin: 15px auto; /* Center alignment */
 }
 
-.password:hover{
+.modal .form-control:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Highlighted input focus */
+}
+
+.modal .btn {
+    width: 135px;
+    border-radius: 15px;
+    background-color: #b5ec9d82; /* Similar button styling */
+    border: none;
+    color: #2a2e35; /* Text color */
+    margin: 15px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.modal .btn:hover {
+    background-color: #b5ec9d82;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hover effect */
+}
+
+.modal .password {
+    border-radius: 15px;
+    background-color: #b5ec9d82;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    display: block;
+    padding: 10px;
+}
+
+.modal .password:hover {
     background-color: #b5ec9d82; 
     color: #fff; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hover effect for password field */
+}
+.modal-footer {
+    display: flex; /* Flexible layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start */
+    justify-content: center; /* Center items vertically */
+    gap: 15px; /* Add spacing between buttons */
+    padding: 1rem;
+    border: none; /* Remove border */
+}
+
+/* General styling for buttons */
+.modal-footer .btn {
+    width: 100%; /* Make buttons full width */
+    max-width: 200px; /* Optional: Restrict max width for uniformity */
+    border-radius: 15px;
+    background-color: #b5ec9d82;
+    color: #2a2e35;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-footer .btn:hover {
+    background-color: #b5ec9d82;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific styling for "Forgotten Password" */
+.modal-footer .forgotten-password-btn {
+    display: flex;
+    align-items: center; /* Align button text in one row */
+    justify-content: center;
+    font-size: 1rem; /* Ensure text is readable */
+    border: none;
+    background-color: transparent; /* Optional: No background */
+    text-decoration: underline; /* Underline for emphasis */
+    color: #2a2e35;
+    padding: 0;
+    max-width: none; /* Ensure text fits in one line */
+}
+
+.modal-footer .forgotten-password-btn:hover {
+    text-decoration: none; /* Remove underline on hover */
+    color: #0056b3; /* Change text color on hover */
 }
