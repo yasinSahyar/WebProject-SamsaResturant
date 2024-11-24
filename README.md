@@ -1,135 +1,89 @@
+# Samsa Restaurant Project - README.md
+
+## Introduction
+
+This project is aimed at creating a modern web application for Samsa Restaurant that features reusable HTML components like login, registration, password reset, and reservation forms. This approach enhances code maintainability and consistency across multiple pages. Backend functionalities are built to handle user registration, login, password reset, and more, with a focus on modularity and efficiency.
+
+## Features
+
+- **User Authentication**: Users can register, login, and reset passwords through modal forms.
+- **Reservation System**: Customers can book tables using the reservation modal form.
+- **Reusable HTML Components**: HTML components like headers and modals are reused across multiple pages to avoid redundancy and ensure consistency.
+- **Backend Integration**: The backend is connected to handle user data securely, including hashing passwords and managing session data.
+- **Postman API Testing**: The project was tested using Postman to ensure that endpoints for registration, login, and password reset are functional.
+
+## Project Structure
+
+- **HTML Files**: Individual HTML files like `index.html`, `menu.html`, `login.html`, `reservation.html` , contain placeholders for shared components (e.g., modals, header).
+- **JavaScript Files**: JavaScript files like `login.js`, `register.js`, `forgot-password.js`, and `reservation.js` are used to add dynamic behavior to forms, handle form submissions, and make API requests.
+- **Backend**: Node.js, Express.js are used for handling backend logic. The backend manages user authentication, password hashing, and database integration using MySQL.
+
+## Dependencies and Installations
+
+To run this project locally, make sure to install the following dependencies:
+
+1. **Node.js**: Make sure Node.js is installed. You can check this by running `node -v`.
+2. **Express**: Install Express to create the server.
+   ```bash
+   npm install express
+   ```
+3. **Bcrypt**: Used for hashing passwords to ensure security.
+   ```bash
+   npm install bcrypt
+   ```
+4. **Nodemon**: Used for automatically restarting the server during development.
+   ```bash
+   npm install -g nodemon
+   ```
+5. **UUID**: Used for generating unique tokens for password reset functionality.
+   ```bash
+   npm install uuid
+   ```
+6. **MySQL**: Install MySQL driver to connect the backend to the MySQL database.
+   ```bash
+   npm install mysql
+   ```
+7. **CORS**: To handle cross-origin requests.
+   ```bash
+   npm install cors
+   ```
+
+## Running the Project
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd WebProject-SamsaRestaurant
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Start the server**
+   Use nodemon to start the server with automatic reload during development.
+   ```bash
+   npm run dev
+   ```
+   Alternatively, you can use Node.js directly:
+   ```bash
+   node src/app.js
+   ```
+4. **Open in Browser**
+   Navigate to `http://localhost:5000` in your web browser to view the application.
+
+## API Testing Using Postman
+
+- **User Registration** (`POST /auth/register`): Submit user details to register a new account.
+- **User Login** (`POST /auth/login`): Authenticate existing users.
+- **Forgot Password** (`POST /auth/forgot-password`): Send a reset password link to the user's email.
 
 
-https://trello.com/b/lsjkAzKa/samsa-project
+## Key Functionalities
 
-https://www.figma.com/design/YEgomIC1WXIpO62SPamh3Q/Untitled?node-id=2-36&node-type=symbol&t=uR17kugr1bc7xrJo-0
-
-
-# Project Name
-
-## Getting Started
-
-### Install Dependencies
-Run the following command to install all required dependencies, including development dependencies like nodemon:
-
-```bash
-npm install
-```
-
-### Environment Variables
-Create a `.env` file in the root directory and add the following:
-
-```makefile
-PORT=5000
-DB_HOST=your-database-host
-DB_USER=your-database-user
-DB_PASSWORD=your-database-password
-DB_NAME=your-database-name
-JWT_SECRET=your-secret-key
-```
-
-### Run the Development Server
-Use the following command to start the server in development mode (uses nodemon for live reloading):
-
-```bash
-npm run dev
-```
-
-The server will start and be accessible at [http://localhost:5000](http://localhost:5000).
-
-### Start the Server in Production Mode
-If you'd like to run the application without live reloading, you can start the server using:
-
-```bash
-npm start
-```
-
-### Access the Frontend
-Open [http://localhost:5000](http://localhost:5000) in your browser to access the application.
-
-## File Structure
-
-```
-project-root/
-│
-├── src/
-│   ├── app.js                   # Main entry point of the application
-│   ├── routes/                  # API routes
-│   │   ├── auth-routes.js       # User authentication routes
-│   │   ├── reservation-routes.js# Reservation-related routes
-│   │   └── index-routes.js      # Root routes
-│   ├── controllers/             # Business logic for routes
-│   │   ├── auth-controller.js   # Logic for user authentication
-│   │   ├── reservation-controller.js # Logic for reservation handling
-│   ├── models/                  # Database interaction logic
-│   │   ├── user-model.js        # User model for DB operations
-│   │   ├── reservation-model.js # Reservation model for DB operations
-│   ├── utils/                   # Utility functions
-│   │   ├── db.js                # Database connection logic
-│   │   ├── error-handler.js     # Custom error handling logic
-│   └── public/                  # Static frontend files
-│       ├── index.html           # Main HTML file
-│       ├── Reservation.html     # Reservation page
-│       └── styles.css           # CSS file
-├── package.json                 # Project metadata and dependencies
-├── .env                         # Environment variables
-└── README.md                    # Project documentation
-```
-## Testing the Project
-## API Endpoints
-
-### Authentication
-
-#### Register User:
-**POST** `/auth/register`
-
-**Request Body:**
-```json
-{
-  "full_name": "John Doe",
-  "date_of_birth": "1990-01-01",
-  "contact_number": "1234567890",
-  "address": "123 Main St",
-  "email": "john@example.com",
-  "password": "securepassword"
-}
-```
-
-#### Login User:
-**POST** `/auth/login`
-
-**Request Body:**
-```json
-{
-  "email": "john@example.com",
-  "password": "securepassword"
-}
-```
-
-### Reservations
-
-#### Create Reservation:
-**POST** `/reservation`
-
-**Request Body:**
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "adults": 2,
-  "children": 1,
-  "reservation_date": "2024-12-25",
-  "reservation_time": "18:30",
-  "special_request": "Window seat, please."
-}
-```
-
-### Frontend
-- Open `index.html` in a browser.
-- Use the reservation form for manual testing.
+- **Frontend**: Modal forms for login, registration, password reset, and reservation are used to streamline user interactions. They are dynamically loaded into different HTML pages.
+- **Backend**: Handles user data securely using hashed passwords, MySQL database integration, and JSON-based APIs for frontend interactions.
 
 
-## Troubleshooting
 
-- **Database Connection Issues**: Ensure `.env` has the correct database credentials.
-- **Missing Dependencies**: Run `npm install` to install all required packages.
+
+
