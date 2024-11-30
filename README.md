@@ -58,7 +58,27 @@ To run this project locally, make sure to install the following dependencies:
 2. **Install dependencies**
    ```bash
    npm install
+   
    ```
+   Express
+
+Express: A fast web framework for Node.js used to build the backend server. It provides a simple API for handling routes, middleware, and HTTP requests.
+
+bcrypt
+
+bcrypt: Used for hashing passwords to ensure user security. This ensures passwords are stored securely, making it difficult for unauthorized parties to access them.
+
+uuid
+
+uuid: Generates unique tokens for password reset purposes. This ensures that each reset token is unique and secure.
+
+nodemon
+
+nodemon: A utility to automatically restart the server during development whenever files change. It enhances the development workflow by eliminating the need to manually restart the server.
+
+dotenv
+
+dotenv: Loads environment variables from a .env file, typically used for storing sensitive information like database credentials and API keys securely.
 3. **Start the server**
    Use nodemon to start the server with automatic reload during development.
    ```bash
